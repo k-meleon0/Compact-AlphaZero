@@ -10,10 +10,10 @@ void PrintBoard(S_BOARD &board) {
   for (row = 5; row >= 0; --row)  {
     for (column = 0; column < 7; ++column)  {
       if (board.board[0] & SetMask[row + 7*column]) {
-        std::cout << "O";
+        std::cout << "X";
       }
       else if (board.board[1] & SetMask[row + 7*column])  {
-        std::cout << "X";
+        std::cout << "O";
       }
       else {
         std::cout << "_";
