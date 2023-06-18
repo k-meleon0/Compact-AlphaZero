@@ -1,6 +1,6 @@
 import subprocess
 import load_model
-import edit_template
+import eval_edit_template
 
 
 def execute_cpp():
@@ -9,7 +9,7 @@ def execute_cpp():
     tmp=subprocess.call(["./eval"])
 
 if __name__ == "__main__":
-    editor = edit_template.Editor()
+    editor = eval_edit_template.Editor()
     editor.edit_eval_mcts()
     generation = input("Enter the generation to test : ")
     model = load_model.load_in_python(generation)
