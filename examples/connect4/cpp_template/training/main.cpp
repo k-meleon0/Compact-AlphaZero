@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
 
       // KataGo Playout cap randomization
       int number_of_recorded_turn = 0;
-      float probability_of_record = 1;
+      float probability_of_record = 0.25;
 
       float history_of_policy[MAX_MOVES][OUTPUT_DIM];
 
