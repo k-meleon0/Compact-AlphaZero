@@ -1,9 +1,9 @@
 
 """ AlphaZero hyperparameters. """
-NUMBER_OF_GENERATIONS = 20
+NUMBER_OF_GENERATIONS = 40
 NUMBER_OF_GAMES = 1000 # per generation
 
-C_PUCT = 4
+C_PUCT = 3
 
 EPSILON = 0.25
 ALPHA = 1
@@ -17,6 +17,6 @@ WEIGHT_DECAY = 3e-5
 BATCH_SIZE = 256
 
 """ Parameters relative to the game. """
-INPUT_DIM = 98 # TODO
-OUTPUT_DIM = 14 # TODO
-MAX_MOVES = 99 # TODO
+INPUT_DIM = 98
+OUTPUT_DIM = 14
+MAX_MOVES = 99

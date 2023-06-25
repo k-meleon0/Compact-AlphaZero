@@ -15,8 +15,8 @@ class DoubleHeadedNN(torch.nn.Module):
   def __init__(self, input_dim=configs.INPUT_DIM, output_dim=configs.OUTPUT_DIM):
     super(DoubleHeadedNN, self).__init__()
 
-    self.commonLinear1 = torch.nn.Linear(input_dim, 64)
-    self.commonLinear2 = torch.nn.Linear(64, 64)
+    self.commonLinear1 = torch.nn.Linear(input_dim, 256)
+    self.commonLinear2 = torch.nn.Linear(256, 64)
     self.policyHead1 = torch.nn.Linear(64, 32)
     self.policyHead2 = torch.nn.Linear(32, output_dim)
     self.valueHead1 = torch.nn.Linear(64, 32)

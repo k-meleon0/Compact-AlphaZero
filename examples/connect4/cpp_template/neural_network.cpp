@@ -4,16 +4,11 @@
 
 /* INPUT SPACE OF THE NEURAL NETWORK
 
-12 * 24 for seeds
-
-2 * 24 for current scores
-
-Only the first player plays
-
+49 * 2 cases for both players
 
 OUTPUT SPACE
 
-6 for plays
+7 * 2 for the columns
 
 Result : float32
 
@@ -22,15 +17,15 @@ Result : float32
 struct DoubleHeadedNN_s
 {
     // Weights of the neural network
-    float weights0[INPUT_DIM][64];
-    float weights1[64][64];
+    float weights0[INPUT_DIM][256];
+    float weights1[256][64];
     float policyWeights0[64][32];
     float policyWeights1[32][OUTPUT_DIM];
     float valueWeights0[64][32];
     float valueWeights1[32][1];
 
     // Bias of the neural network
-    float bias0[64];
+    float bias0[256];
     float bias1[64];
     float policyBias0[32];
     float policyBias1[OUTPUT_DIM];
@@ -38,7 +33,7 @@ struct DoubleHeadedNN_s
     float valueBias1[1];
 
     // Utility vectors
-    float vector0[64];
+    float vector0[256];
     float vector1[64];
     float vector2[32];
     float vector3[1];
@@ -158,9 +153,9 @@ void evaluate(float Outputs[], float (*function)(float), int vector_size)    {
 }
 
 void first_two_layers(DoubleHeadedNN &model, bool Inputs[]) {
-    add(model.vector0, model.bias0, 64);
-    multiply(model.weights0, Inputs, model.vector0, INPUT_DIM, 64);
-    ReLU(model.vector0, 64);
+    add(model.vector0, model.bias0, 256);
+    multiply(model.weights0, Inputs, model.vector0, INPUT_DIM, 256);
+    ReLU(model.vector0, 256);
 
     add(model.vector1, model.bias1, 64);
     multiply2(model.weights1, model.vector0, model.vector1, 64, 64);
