@@ -47,10 +47,6 @@ On Connect Four, the model achieved a great level of play after one and a half o
 
 On Oware Abapa (not shown in examples), the model arrived 18th on the leaderboard of CodinGame after four hours of training which consisted of around 120 generations.
 
-## Project status
-
-The project is no longer being worked on as I an now studying the methods on games with imperfect information.
-
 
 
 
